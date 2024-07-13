@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include<list>
 
 using namespace std;
 
@@ -70,8 +71,8 @@ void explainVector(){
     //having an vector of elements  {10,20,30,40}
 
     vector<int>::iterator it=v.end();   //points after 40 in the vector
-    vector<int>::iterator it=v.rend();   //never used points before 10
-    vector<int>::iterator it=v.rbegin();   //points to 40 and moves backward  && less used
+    // vector<int>::iterator it=v.rend();   //never used points before 10
+    // vector<int>::iterator it=v.rbegin();   //points to 40 and moves backward  && less used
 
     cout<<v[0];   //prints value at 0 position
 
@@ -125,6 +126,25 @@ void explainVector(){
 
 }
 
+void explainList(){
+    //similar like vector in declaration insertion
+    list<int>ls;
+
+    ls.push_back(2);  //{2}
+    ls.emplace_back(4);  //{2,4}
+    ls.push_front(5); //{5,2,4}
+    ls.emplace_front(7);   //{7,2,4}
+
+    //rest functions are same as vector
+    //begin,end,rbegin,,rend,clear,insert,size,swap 
+}
+
+void explainDeque(){
+
+}
+
+
+
 int main()
 {
     // print();
@@ -132,6 +152,8 @@ int main()
     // int ans = sum(1, 6);
     // cout << "sum is : " << ans;
     // explainPair();
-    explainVector();
+    // explainVector();
+    // explainList();
+    explainDeque();
     return 0;
 }
