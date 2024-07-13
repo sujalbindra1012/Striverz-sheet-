@@ -4,6 +4,10 @@
 #include <algorithm>
 #include <vector>
 #include<list>
+#include<deque>
+#include<stack>
+#include<queue>
+#include<set>
 
 using namespace std;
 
@@ -140,10 +144,78 @@ void explainList(){
 }
 
 void explainDeque(){
+    deque<int>dq;
+    dq.push_back(1);  //{1}
+    dq.emplace_back(2);  //{1,2}
+    dq.push_front(4); //{4,1,2}
+    dq.emplace_front(3); //{3,4,1,2}
 
+    dq.pop_back(); //{3,4,1}
+    dq.pop_front();  //{4,1}
+
+    //rest functions are same as vector
+    //begin , end, rbegin,rend,clear,insert,size,swap
 }
 
+void explainStack(){
+    stack<int>st;
+    st.push(1); //{1}
+    st.push(2); //{2,1}
+    st.push(3); //{3,2,1}
+    st.push(4); //{4,3,2,1}
+    st.emplace(5);  //{5,4,3,2,1}
 
+    cout<<st.top();  // prints 5
+    st.pop();   //removes 5 stack left {4,3,2,1}
+
+    cout<<st.top(); //prints 4
+    cout<<st.size(); //4
+    cout<<st.empty(); //checks empty or not
+    stack<int>s1,s2;
+    s1.swap(s2);
+    
+    //everything happens in constant time
+}
+
+void explainQueue(){
+    queue<int>q;
+    q.push(1); //1
+    q.push(2); //{1,2}
+    q.emplace(4);  //{1,2,4}
+
+    q.back()+=5; // {1,2,9}
+    //other are same as stack
+}
+
+void explainPQ(){
+    //max-heap declaration
+    priority_queue<int>pq;
+
+    pq.push(5); //5
+    pq.push(2); //5,2
+    pq.push(7); //7,5,2
+    pq.emplace(10); //10,7,5,2
+
+    cout<<pq.top(); //prints element at top or higher value //10
+    pq.pop(); //prints element at top //10
+
+    //min-heap declaration
+    priority_queue<int,vector<int>,greater<int>>p;
+    pq.push(5); //5
+    pq.push(2); //2,5
+    pq.push(7); //2,5,7
+    pq.emplace(10); //2,5,7,10
+
+    pq.top(); //prints 2
+
+
+    // time complexity of push->0(logn) and pop->0(logn) and top->0(1)
+}
+
+void explainSet(){
+    //stores in sorted order and non-repeated terms
+
+}
 
 int main()
 {
@@ -154,6 +226,9 @@ int main()
     // explainPair();
     // explainVector();
     // explainList();
-    explainDeque();
+    // explainDeque();
+    // explainStack();
+    // explainQueue();
+    explainSet();
     return 0;
 }
