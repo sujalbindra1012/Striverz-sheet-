@@ -7,6 +7,14 @@
 // output=2
 // explanation - 1,2 both divides 12 leave remainder 0
 
+// Input: n = 2446
+// Output: 1
+// Explanation: Here among 2, 4, 6 only 2 divides 2446 evenly while 4 and 6 do not.
+
+// Input: n = 23
+// Output: 0
+// Explanation: 2 and 3, none of them divide 23 evenly.
+
 #include <iostream>
 using namespace std;
 
@@ -17,7 +25,7 @@ void evenlydivides(int n)
     while (n > 0)
     {
         int digit = n % 10;
-        if ((digit != 0) && (y % digit == 0))
+        if ((digit != 0) && (y % digit == 0))    //digit!=0 is used to remove problem of having 0 in digit
         {
             count++;
         }
